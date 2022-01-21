@@ -5,8 +5,8 @@ src/headers/dataReader.h src/headers/pdfTypes.h src/headers/entryFormTypes.h
 	-std=c++20 \
 	-O2 \
 	-L lib/hummus \
-	-I include/hummus \
-	-I include/FreeType \
+	-I lib/hummus \
+	-I lib/hummus/FreeType/include \
 	-o pdfWriter src/main.cpp \
 	-l:PDFWriter/libPDFWriter.a \
 	-l:LibPng/libLibPng.a \
