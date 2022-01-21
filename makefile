@@ -13,6 +13,6 @@ src/headers/dataReader.h src/headers/pdfTypes.h src/headers/entryFormTypes.h
 	-l:FreeType/libFreeType.a \
 	-l:LibAesgm/libLibAesgm.a \
 	-l:ZLib/libZlib.a \
-	-l:ZLib/libTiff.a \
+	-l:LibTiff/libLibTiff.a \
 	-static-libstdc++ \
 	-Wall -Wextra
