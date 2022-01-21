@@ -12,7 +12,7 @@
   header( 'Content-Type: application/pdf' );
   header( 'Content-Disposition: ' . $disposition . '; filename="' . $fileName . '"' );
 
-  if ( streaming ) {
+  if ( $streaming ) {
 
     $descriptorspec = array(
       0 => array("pipe", "r"), 
