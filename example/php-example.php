@@ -12,6 +12,8 @@
   $fileName = "Noordshow-M-Apperlo-versie-1.pdf";
   $outputFolder = "output/";
 
+  echo str_replace("\n", "", file_get_contents( $path . $jsonFileName ));
+exit;
   header( 'Content-Type: application/pdf' );
   header( 'Content-Disposition: ' . $disposition . '; filename="' . $fileName . '"' );
 
