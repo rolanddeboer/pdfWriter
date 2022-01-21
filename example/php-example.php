@@ -1,8 +1,11 @@
 <?php
-  $streaming = !(isset($_GET['static']));
-  $disposition = isset($_GET['inline']) ? "inline" : "attachment";
+  //$streaming = !(isset($_GET['static']));
+  //$disposition = isset($_GET['inline']) ? "inline" : "attachment";
 
-  $path = "/var/dev/pdfWriter/";
+  $streaming = true;
+  $disposition = "inline";
+
+  $path = "/dev/pdfWriter/";
   $appName = "pdfWriter";
   $jsonFileName = "testdata.json";
   
