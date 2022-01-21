@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "title": "M. Apperlo Noordshow 2020 (versie 3)" ,
+    "subject": "Inschrijving Noordshow 2020",
+    "keywords": "Noordshow"
+  },
+  "fileName": "Noordshow-M-Apperlo-versie-1",
+  "showName": "Noordshow 2020",
+  "showLogo": "/usr/local/share/ao/images/diamond.png",
+  "footerText": "Noordshow 2020, M. Apperlo (versie 3) - pagina ",
+  "personName": "M. Apperlo",
+  "headerText": {
+    "subText": "Ingevuld op 9 december 2017 (versie 3), gewijzigd op 13 december 2017",
+    "subTextRed": "Totaalbedrag gewijzigd",
+    "rows" : [
+      [
+        { "style": "regular", "text": "Annerstreek 40, 9468 AP Annen" },
+        { "style": "regular", "text": "0592-273426" },
+        { "style": "regular", "text": "m.apperlo@versatel.nl" },
+        { "style": "regular", "text": "NL08 RABO 0301 8541 14" },
+        { "style": "regular", "text": "Fokkersnummer NBS: A05-30606" }
+      ],
+      [
+        { "style": "bold", "text": "Contactpunt Noordshow 2018" },
+        { "style": "regular", "text": "Harry Beerling" },
+        { "style": "regular", "text": "h.beerling2@kpnplanet.nl" },
+        { "style": "regular", "text": "0524-542144" },
+        { "style": "regular", "text": "06-51843068" }
+      ]
+    ]
+  },
+  "sections": [
+    {
+      "title": "Ingeschreven dieren",
+      "columns": [
+        { "style": "regular", "align": "left", "text": "Nr.", "width": 38 },
+        { "style": "regular", "align": "left", "text": "", "width": 25 },
+        { "style": "regular", "align": "left", "text": "Dier", "width": 166 },
+        { "style": "regular", "align": "left", "text": "Ras", "width": 225 },
+        { "style": "regular", "align": "left", "text": "Kleur", "width": 206 },
+        { "style": "regular", "align": "left", "text": "Klasse", "width": 138 },
+        { "style": "regular", "align": "left", "text": "Merknr.", "width": 127 },
+        { "style": "regular", "align": "left", "text": "Prijs", "width": 76 }
+      ],
+      "rows": [
+        [ "1", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "duivin oud", "", "" ],
+        [ "2", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "doffer jong", "", "" ],
+        [ "3", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "doffer oud", "", "" ],
+        [ "4", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin oud", "", "" ],
+        [ "5", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin jong", "", "" ],
+        [ "6", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig ongeband", "doffer oud", "", "" ],
+        [ "7", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig ongeband", "doffer oud", "", "" ],
+        [ "8", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig ongeband", "duivin oud", "", "" ],
+        [ "9", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig ongeband", "doffer jong", "", "" ],
+        [ "10", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig ongeband", "duivin jong", "", "" ],
+        [ "11", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig witgeband", "duivin oud", "", "" ],
+        [ "12", "", "Sierduiven",  "IJsduif (voetbevederd)", "ijskleurig witgeband", "doffer jong", "", "" ]
+      ]
+    },
+    {
+      "title": "Hier nog een paar",
+      "columns": [
+        { "style": "regular", "align": "left", "text": "Nr.", "width": 38 },
+        { "style": "regular", "align": "left", "text": "", "width": 25 },
+        { "style": "regular", "align": "left", "text": "Dier", "width": 166 },
+        { "style": "regular", "align": "left", "text": "Ras", "width": 225 },
+        { "style": "regular", "align": "left", "text": "Kleur", "width": 206 },
+        { "style": "regular", "align": "left", "text": "Klasse", "width": 138 },
+        { "style": "regular", "align": "left", "text": "Merknr.", "width": 127 },
+        { "style": "regular", "align": "left", "text": "Prijs", "width": 76 }
+      ],     
+      "rows": [
+        [ "1", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "duivin oud", "", "" ],
+        [ "2", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "doffer jong", "", "" ],
+        [ "3", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "doffer oud", "", "" ],
+        [ "4", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin oud", "", "" ],
+        [ "5", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin jong", "", "" ],
+        [ "2", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "doffer jong", "", "" ],
+        [ "3", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "doffer oud", "", "" ],
+        [ "4", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin oud", "", "" ],
+        [ "5", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin jong", "", "" ],
+        [ "2", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "doffer jong", "", "" ],
+        [ "3", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "doffer oud", "", "" ],
+        [ "4", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin oud", "", "" ],
+        [ "5", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin jong", "", "" ]
+      ]
+    },
+    {
+      "title": "Oh, kijk vond ik net",
+      "columns": [
+        { "style": "regular", "align": "left", "text": "Nr.", "width": 38 },
+        { "style": "regular", "align": "left", "text": "", "width": 25 },
+        { "style": "regular", "align": "left", "text": "Dier", "width": 166 },
+        { "style": "regular", "align": "left", "text": "Ras", "width": 225 },
+        { "style": "regular", "align": "left", "text": "Kleur", "width": 206 },
+        { "style": "regular", "align": "left", "text": "Klasse", "width": 138 },
+        { "style": "regular", "align": "left", "text": "Merknr.", "width": 127 },
+        { "style": "regular", "align": "left", "text": "Prijs", "width": 76 }
+      ],
+      "rows": [
+        [ "1", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "duivin oud", "", "" ],
+        [ "2", "", "Sierduiven",  "Brünner Kropper", "blauw zwartgeband", "doffer jong", "", "" ],
+        [ "3", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "doffer oud", "", "" ],
+        [ "4", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin oud", "", "" ],
+        [ "5", "", "Sierduiven",  "Brünner Kropper", "blauw gekrast", "duivin jong", "", "" ]
+      ]
+    }
+  ],
+  "totals": {
+    "title": "Totalen",
+    "discountsTitle": "Kortingen",
+    "finalText": "Totaal te betalen",
+    "finalValue": "€ 71,00",
+    "columns": [
+      { "style": "regular", "align": "left", "text": "Aantal", "width": 100 },
+      { "style": "regular", "align": "left", "text": "Omschrijving", "width": 225 },
+      { "style": "regular", "align": "right", "text": "Prijs", "width": 100 },
+      { "style": "bold", "align": "right", "text": "Totaal", "width": 100 }
+    ],
+    "costs": [
+      [ "12", "Sierduiven - enkel dier", "€ 5,00", "€ 60,00" ],
+      [ "1", "Administratiekosten", "€ 3,00", "€ 3,00" ],
+      [ "1", "Catalogus (1 per gezin verplicht)", "€ 8,00", "€ 8,00" ]
+    ],
+    "discounts": [
+      [ "12", "Sierduiven - enkel dier", "€ 5,00", "€ 60,00" ],
+      [ "1", "Catalogus (1 per gezin verplicht)", "€ 8,00", "€ 8,00" ]
+    ]
+  },
+  "extras": {
+    "title": "Extra bijzonderheden",
+    "lines": [
+      "Wenst gebruik te maken van automatische incasso.",
+      "Het totaalbedrag van <bold>€ 71,00</bold> zal worden afgeschreven van IBAN nummer NL08 RABO 0301 8541 14. Als u het niet eens bent met de afschrijving, kunt u deze laten terugboeken. Neem hiervoor binnen acht weken na afschrijving contact op met uw bank en vraag naar de voorwaarden."
+    ]
+  }
+}

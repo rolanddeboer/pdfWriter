@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLibAesgm.a  CMakeFiles/LibAesgm_OBJLIB.dir/aescrypt.c.o CMakeFiles/LibAesgm_OBJLIB.dir/aeskey.c.o CMakeFiles/LibAesgm_OBJLIB.dir/aes_modes.c.o CMakeFiles/LibAesgm_OBJLIB.dir/aes_ni.c.o CMakeFiles/LibAesgm_OBJLIB.dir/aestab.c.o
+/usr/bin/ranlib libLibAesgm.a
