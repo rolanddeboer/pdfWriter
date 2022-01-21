@@ -12,8 +12,6 @@
   $fileName = "Noordshow-M-Apperlo-versie-1.pdf";
   $outputFolder = "output/";
 
-  echo str_replace("\n", "", file_get_contents( $path . $jsonFileName ));
-exit;
   header( 'Content-Type: application/pdf' );
   header( 'Content-Disposition: ' . $disposition . '; filename="' . $fileName . '"' );
 
@@ -27,7 +25,8 @@ exit;
     
     $process = proc_open( $path . $appName, $descriptorspec, $pipes, $path );
     
-    if (is_resource($process)) {    
+    if (is_resource($process)) {  
+      echo "hi";  
       fwrite( $pipes[0], str_replace("\n", "", file_get_contents( $path . $jsonFileName )) );
       fclose($pipes[0]);
   
