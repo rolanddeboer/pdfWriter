@@ -5,7 +5,7 @@
   $streaming = true;
   $disposition = "inline";
 
-  $path = "/dev/pdfWriter/";
+  $path = "/var/dev/pdfWriter/";
   $appName = "pdfWriter";
   $jsonFileName = "testdata.json";
   
