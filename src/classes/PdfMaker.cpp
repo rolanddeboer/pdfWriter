@@ -3,11 +3,11 @@
 #include <regex>
 
 // https://github.com/galkahana/PDF-Writer/wiki
-#include "../../include/hummus/PDFWriter/PDFWriter.h"
-#include "../../include/hummus/PDFWriter/PDFPage.h"
-#include "../../include/hummus/PDFWriter/PDFUsedFont.h"
-#include "../../include/hummus/PDFWriter/AbstractContentContext.h"
-#include "../../include/hummus/PDFWriter/PageContentContext.h"
+#include "../../include/hummus/PDFWriter.h"
+#include "../../include/hummus/PDFPage.h"
+#include "../../include/hummus/PDFUsedFont.h"
+#include "../../include/hummus/AbstractContentContext.h"
+#include "../../include/hummus/PageContentContext.h"
 
 #include "../headers/pdfTypes.h"
 #include "UtilFunctions.cpp"
