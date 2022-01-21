@@ -2,7 +2,7 @@
   $streaming = !(isset($_GET['static']));
   $disposition = isset($_GET['inline']) ? "inline" : "attachment";
 
-  $path = "/dev/pdfWriter/";
+  $path = "/var/dev/pdfWriter/";
   $appName = "pdfWriter";
   $jsonFileName = "testdata.json";
   
