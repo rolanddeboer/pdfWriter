@@ -2,8 +2,8 @@
   $streaming = !(isset($_GET['static']));
   $disposition = isset($_GET['inline']) ? "inline" : "attachment";
 
-  $path = "/usr/local/share/ao/aopdf/";
-  $appName = "aopdf";
+  $path = "/dev/pdfWriter/";
+  $appName = "pdfWriter";
   $jsonFileName = "testdata.json";
   
   $fileName = "Noordshow-M-Apperlo-versie-1.pdf";
