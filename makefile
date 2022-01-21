@@ -2,6 +2,7 @@ pdfWriter: src/main.cpp \
 src/classes/DataReader.cpp src/classes/PdfMaker.cpp src/classes/EntryFormMaker.cpp \
 src/headers/dataReader.h src/headers/pdfTypes.h src/headers/entryFormTypes.h
 	g++ \
+	-std=c++20 \
 	-O2 \
 	-L lib/hummus/build \
 	-I lib/hummus \
