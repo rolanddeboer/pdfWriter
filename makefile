@@ -14,5 +14,6 @@ src/headers/dataReader.h src/headers/pdfTypes.h src/headers/entryFormTypes.h
 	-l:LibAesgm/libLibAesgm.a \
 	-l:ZLib/libZlib.a \
 	-l:LibTiff/libLibTiff.a \
+	-l:LibJpeg/libLibJpeg.a \
 	-static-libstdc++ \
 	-Wall -Wextra
