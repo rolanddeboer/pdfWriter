@@ -20,7 +20,7 @@ class UtilFunctions
   }
 
   static void mustAccessFile( string filename ) {
-    if ( !access( filename.c_str(), 0 ) == 0 ) {
+    if ( access( filename.c_str(), 0 ) != 0 ) {
       cerr << "Unable to access file: " << filename << "\n";
       exit (EXIT_FAILURE);
     };

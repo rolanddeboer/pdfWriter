@@ -26,7 +26,6 @@
     $process = proc_open( $path . $appName, $descriptorspec, $pipes, $path );
     
     if (is_resource($process)) {  
-      echo "hi";  
       fwrite( $pipes[0], str_replace("\n", "", file_get_contents( $path . $jsonFileName )) );
       fclose($pipes[0]);
   
