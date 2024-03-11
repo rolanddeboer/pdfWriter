@@ -9,7 +9,7 @@
       int text, title, heading, topBar, sectionTitle, tableHead, tableBody, totalsFooter, extras, footer;
     } size;
     struct FontColor {
-      int text, title, heading, footer, headingSubText, red;
+      int text, name, title, heading, headingLight, footer, headingSubText, red, bold, italic, light;
     } color;
     struct FontLineHeight {
       int topBar, tableBody, extras;

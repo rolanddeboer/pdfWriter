@@ -20,7 +20,7 @@ class EntryFormMaker {
 
     footerText = "";
     
-    font.size.title = 26;
+    font.size.title = 30;
     font.size.heading = 22;
     font.size.topBar = 10;
     font.size.tableHead = 10;
@@ -32,29 +32,35 @@ class EntryFormMaker {
     font.size.totalsFooter = 16;
 
     font.color.text = 0;
-    font.color.title = 0x4B4B4B;
-    font.color.heading = 0x323232;
-    font.color.headingSubText = 0x323232;
+    font.color.name = 0xab5e2b;
+    font.color.title = 0xc5a15f;
+    font.color.heading = 0xc5a15f;
+    font.color.headingLight = 0xab5e2b;
+    font.color.headingSubText = 0x727272;
     font.color.footer = 0x969696;
     font.color.red = 0xbb2222;
+    // font.color.bold = 0x964007;
+    font.color.bold = 0xab5e2b;
+    font.color.light = 0xab5e2b;
+    font.color.italic = 0x525252;
     
     font.lineHeight.topBar = 12;
     font.lineHeight.tableBody = 18;
     font.lineHeight.extras = 15;
 
-    line.thickness.header = 1;
+    line.thickness.header = .5;
     line.thickness.tableHead = .5;
     line.thickness.tableBody = .5;
-    line.color.header = 0x444444;
-    line.color.tableHead = 0x111111;
-    line.color.tableBody = 0xAAAAAA;
+    line.color.header = 0xc5a15f;
+    line.color.tableHead = 0xd1c9ba;
+    line.color.tableBody = 0xe1d9ca;
   }
 
   void drawTitleBar(string text) {
     pdfMaker->newPageAt( 120 );
     pdfMaker->drawHorizontalLine( line.thickness.header, line.color.header );
     pdfMaker->moveDown(27);
-    pdfMaker->setFont( FONT_HEADING, font.size.heading, font.color.heading );
+    pdfMaker->setFont( FONT_HEADING, font.size.heading, font.color.headingLight );
     pdfMaker->writeText( text, ALIGN_CENTER );
     pdfMaker->moveDown(11);
     pdfMaker->drawHorizontalLine( line.thickness.header, line.color.header );
@@ -62,7 +68,7 @@ class EntryFormMaker {
 
   void drawTableHeader(Table table, double widthMultiplier) 
   {
-    pdfMaker->setFont( FONT_BOLD, font.size.tableHead );
+    pdfMaker->setFont( FONT_BOLD, font.size.tableHead, font.color.bold );
     double xpos = 0;
     double extraWidth = 0;
     for ( int countCol = 0; countCol < (int) table.columns.size(); countCol++ ) {
@@ -76,7 +82,9 @@ class EntryFormMaker {
         xpos,
         xpos + columnWidth
       );
-      updateTablePos( xpos, extraWidth, textWidth, columnWidth );
+      if (countCol < (int) table.columns.size() - 1) {
+        updateTablePos( xpos, extraWidth, textWidth, columnWidth );
+      }
     }
     pdfMaker->moveDown( 5 );
     pdfMaker->drawHorizontalLine( line.thickness.tableBody, line.color.tableHead );
@@ -93,7 +101,9 @@ class EntryFormMaker {
       double extraWidth = 0;
       for ( int countCol = 0; countCol < (int) table.columns.size(); countCol++ ) {
         if (! table.columns[countCol].visible ) continue;
-        pdfMaker->setFont( table.columns[countCol].fontStyle, font.size.tableBody );
+        double color = font.color.text;
+        if ( table.columns[countCol].light ) color = font.color.light;
+        pdfMaker->setFont( table.columns[countCol].fontStyle, font.size.tableBody, color );
         double columnWidth = table.columns[countCol].width * widthMultiplier;
         double textWidth = pdfMaker->getTextWidth( table.rows[countRow][countCol] );
         pdfMaker->writeText( 
@@ -103,7 +113,9 @@ class EntryFormMaker {
           xpos,
           xpos + columnWidth
         );
-        updateTablePos( xpos, extraWidth, textWidth, columnWidth );
+        if (countCol < (int) table.columns.size() - 1) {
+          updateTablePos( xpos, extraWidth, textWidth, columnWidth );
+        }
       }
       pdfMaker->moveDown( 5 );
       pdfMaker->drawHorizontalLine( line.thickness.tableBody, line.color.tableBody );
@@ -112,16 +124,35 @@ class EntryFormMaker {
   }
 
   void updateTablePos( double& xpos, double& extraWidth, double textWidth, double columnWidth ) {
+    int maxSpaceBetweenColumns = 6;
     xpos += columnWidth;
-    if ( textWidth > columnWidth ) {
-      extraWidth += textWidth - columnWidth + 10;
-      xpos += extraWidth;
+    if ( textWidth > columnWidth - maxSpaceBetweenColumns) {
+      double newExtraWidth = textWidth - columnWidth;
+      xpos += newExtraWidth;
+      extraWidth += newExtraWidth + addHorSpacingToTableField(xpos);
     } else if ( extraWidth > 0) {
-      double lessWidth = columnWidth - textWidth + 10;
+      double lessWidth = columnWidth - textWidth - maxSpaceBetweenColumns;
       if ( lessWidth > extraWidth ) lessWidth = extraWidth;
       xpos -= lessWidth;
       extraWidth -= lessWidth;
+      if ( extraWidth > 0 ) {
+        xpos -= maxSpaceBetweenColumns;
+        extraWidth += addHorSpacingToTableField(xpos) - maxSpaceBetweenColumns;
+      }
     }
+  }
+
+  double addHorSpacingToTableField(double& xpos) {
+    pdfMaker->setFontColor( font.color.heading);
+    pdfMaker->writeText( 
+      " | ",
+      ALIGN_LEFT,
+      0,
+      xpos
+    );
+    double spacing = pdfMaker->getTextWidth(" | ");
+    xpos += spacing;
+    return spacing;
   }
 
   public:
@@ -160,7 +191,7 @@ class EntryFormMaker {
   }
 
   void drawPersonName (string name) {
-    pdfMaker->setFont( FONT_HEADING, font.size.heading, font.color.heading );
+    pdfMaker->setFont( FONT_HEADING, font.size.heading, font.color.name );
     pdfMaker->writeText( name, ALIGN_LEFT, 2);
   }
 
@@ -185,7 +216,9 @@ class EntryFormMaker {
     // right text
     pdfMaker->restoreYpos();
     for ( int i = 0; i < (int) headerText.right.size(); i++ ) {
-      pdfMaker->setFont( headerText.right[i].fontStyle, font.size.topBar );
+      double color = font.color.text;
+      if (headerText.right[i].fontStyle == FONT_BOLD) color = font.color.bold;
+      pdfMaker->setFont( headerText.right[i].fontStyle, font.size.topBar, color );
       pdfMaker->writeText( headerText.right[i].text, ALIGN_RIGHT, font.lineHeight.topBar );
     }   
 
@@ -241,7 +274,8 @@ class EntryFormMaker {
     for ( int i = 0; i < (int) extras.lines.size(); ++i ) {
       pdfMaker->moveDown( 5 );
       pdfMaker->newPageAt( 60, -7 );
-      pdfMaker->writeMultiText( "• " + extras.lines[i], font.size.extras, font.lineHeight.extras );
+      pdfMaker->setFont( FONT_REGULAR, font.size.extras );
+      pdfMaker->writeMultiText( "<accent>—</accent> " + extras.lines[i], font.size.extras, font.lineHeight.extras, font.color.heading );
     }
   }
 

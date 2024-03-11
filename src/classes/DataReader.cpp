@@ -122,6 +122,9 @@ class DataReader
         sections[i].columns[countCol].visible = getBoolProperty( 
           "visible", data["sections"][i]["columns"][countCol], true
         );
+        sections[i].columns[countCol].light = getBoolProperty( 
+          "light", data["sections"][i]["columns"][countCol], true
+        );
         sections[i].columns[countCol].width = 
           ( sections[i].columns[countCol].visible )
           ? getDoubleProperty( "width", data["sections"][i]["columns"][countCol] )
@@ -186,6 +189,9 @@ class DataReader
       totals.costs.columns[countCol].visible = getBoolProperty(
         "visible", data["totals"]["columns"][countCol]
       );
+      totals.costs.columns[countCol].light = getBoolProperty(
+        "light", data["totals"]["columns"][countCol]
+      );
       totals.costs.columns[countCol].width = 
         ( totals.costs.columns[countCol].visible )
         ? getDoubleProperty( "width", data["totals"]["columns"][countCol] )
@@ -204,6 +210,7 @@ class DataReader
         totals.reductions.columns[countCol].fontStyle = totals.costs.columns[countCol].fontStyle;
         totals.reductions.columns[countCol].align = totals.costs.columns[countCol].align;
         totals.reductions.columns[countCol].visible = totals.costs.columns[countCol].visible;
+        totals.reductions.columns[countCol].light = totals.costs.columns[countCol].light;
       }
       // Costs: adding cell data, looping through rows
       for (unsigned int countRow = 0; countRow < totals.costs.rows.size(); ++countRow) {

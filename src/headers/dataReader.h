@@ -25,6 +25,7 @@ struct Table {
     double width;
     Align align;
     bool visible;
+    bool light;
   };
   string title;
   double width;

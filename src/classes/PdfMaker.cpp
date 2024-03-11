@@ -36,11 +36,11 @@ class PdfMaker
 
   void initFonts() {
     string fontFiles[] = {
-      "Merriweather/Merriweather-Bold.ttf",
+      "Prociono/Prociono-Regular.ttf",
       "Merriweather/Merriweather-Regular.ttf",
-      "Roboto/Roboto-Regular.ttf",
-      "Roboto/Roboto-Bold.ttf",
-      "Roboto/Roboto-Italic.ttf"
+      "Open Sans/OpenSans-Regular.ttf",
+      "Open Sans/OpenSans-SemiBold.ttf",
+      "Open Sans/OpenSans-Italic.ttf"
     };
     for (int i = 0; i < 5; i++) {
       fontFiles[i] = UtilFunctions::getAssetsDir() + "/fonts/" + fontFiles[i];
@@ -125,6 +125,10 @@ class PdfMaker
     currentFont.color = color;
   }
 
+  void setFontColor ( double color ) {
+    currentFont.color = color;
+  }
+
   double getPageWidth() {
     return page.width - page.margin.left - page.margin.right;
   }
@@ -206,11 +210,13 @@ class PdfMaker
     return textDimensions.width;
   }
 
-  void writeMultiText( string text, int fontSize, double lineHeight ) {
+  void writeMultiText( string text, int fontSize, double lineHeight, double accentColor = 0 ) {
     text = regex_replace( text, regex("<bold>"), " <bold> " );
     text = regex_replace( text, regex("</bold>"), " </bold> " );
     text = regex_replace( text, regex("<italic>"), " <italic> " );
     text = regex_replace( text, regex("</italic>"), " </italic> " );
+    text = regex_replace( text, regex("<accent>"), " <accent> " );
+    text = regex_replace( text, regex("</accent>"), " </accent> " );
     text = regex_replace( text, regex("  "), " " );
     // split the text up in words
     istringstream iss(text);
@@ -230,7 +236,11 @@ class PdfMaker
         setFont( FONT_ITALIC, fontSize );
         continue;
       }
-      if (words[i] == "</bold>" || words[i] == "</italic>") {
+      if (accentColor > 0 && words[i] == "<accent>" ) {
+        setFont( FONT_REGULAR, fontSize, accentColor );
+        continue;
+      }
+      if (words[i] == "</bold>" || words[i] == "</italic>" || words[i] == "</accent>") {
         setFont( FONT_REGULAR, fontSize );
         continue;
       }
