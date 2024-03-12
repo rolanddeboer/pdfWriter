@@ -2,7 +2,7 @@
 
 ## Requirements
 [PDF Hummus](https://github.com/galkahana/PDF-Writer)
-Build Hummus and copy
+Include from github is in cmake config, so will be done automatically during build.
 
 ## Building
 ```bash
