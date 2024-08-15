@@ -1,6 +1,8 @@
 #include <string>
 #include <stdlib.h>
 #include <regex>
+#include <cmath>
+#include <iterator>
 
 // https://github.com/galkahana/PDF-Writer/wiki
 #include "PDFWriter.h"
@@ -159,13 +161,21 @@ class PdfMaker
     moveDown ( moveDownAmount );
   }
 
-  void drawImage(string filename, double height, Align align = ALIGN_LEFT, bool moveDownAfter = true) {
+  void drawImage(string filename, double height, Align align = ALIGN_LEFT, bool moveDownAfter = true, bool isPropotional = true) {
+    if (!filename.length()) return;
     UtilFunctions::mustAccessFile( filename );
     DoubleAndDoublePair imageDimensions = pdfWriter.GetImageDimensions( filename );
     AbstractContentContext::ImageOptions imageOptions;
+    if ( isPropotional ) {
+      double sizeFactor = imageDimensions.first / imageDimensions.second;
+      // sizeFactor = 1;
+      imageOptions.boundingBoxWidth = height * sqrt(sizeFactor);
+      imageOptions.boundingBoxHeight = imageOptions.boundingBoxWidth / sizeFactor;
+    } else {
+      imageOptions.boundingBoxWidth = (height / imageDimensions.second) * imageDimensions.first;
+      imageOptions.boundingBoxHeight  = height;
+    }
     imageOptions.transformationMethod = AbstractContentContext::eFit;
-    imageOptions.boundingBoxHeight = height;
-    imageOptions.boundingBoxWidth = (height / imageDimensions.second) * imageDimensions.first;
     int left = page.margin.left;
     if ( align == ALIGN_CENTER ) left = (page.width - imageOptions.boundingBoxWidth) / 2;
     if ( align == ALIGN_RIGHT ) left = page.width - page.margin.right - imageOptions.boundingBoxWidth;
@@ -175,7 +185,7 @@ class PdfMaker
       filename, 
       imageOptions
     );
-    if ( moveDownAfter ) moveDown( height );
+    if ( moveDownAfter ) moveDown( imageOptions.boundingBoxHeight );
   }
 
   void moveDown ( double height ) {

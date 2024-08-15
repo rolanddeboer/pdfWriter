@@ -12,9 +12,8 @@ include(FetchContent)
 FetchContent_Declare(
   PDFHummus
   DOWNLOAD_EXTRACT_TIMESTAMP FALSE
-  FIND_PACKAGE_ARGS
-  URL https://github.com/galkahana/PDF-Writer/archive/refs/tags/v4.6.2.tar.gz
-  URL_HASH SHA256=0a36815ccc9d207028567f90039785c824b211169ba5da68de84d0c15455ab62
+  URL https://github.com/galkahana/PDF-Writer/archive/refs/tags/v4.6.6.tar.gz
+  URL_HASH SHA256=8343820313e553052df68c75fe2bf35353da2719106e81eb2a8b026ff96c7d7c
 )
 
 FetchContent_MakeAvailable(PDFHummus)
@@ -24,3 +23,5 @@ include_directories(include)
 add_executable(pdfWriter src/main.cpp)
 
 target_link_libraries(pdfWriter PDFHummus::PDFWriter)
+
+install(TARGETS pdfWriter DESTINATION ~/bin COMPONENT pdfWriter)

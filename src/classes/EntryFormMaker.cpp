@@ -15,7 +15,7 @@ class EntryFormMaker {
   PdfMaker* pdfMaker;
 
   void init() {
-    logoHeight.show = 75;
+    logoHeight.show = 125;
     logoHeight.ao = 30;
 
     footerText = "";
@@ -180,8 +180,8 @@ class EntryFormMaker {
   }
 
   void drawLogos(string filename) {
-    pdfMaker->drawImage( aoLogoFilename, logoHeight.ao, ALIGN_RIGHT, false );
-    pdfMaker->drawImage( filename, logoHeight.show );
+    // pdfMaker->drawImage( aoLogoFilename, logoHeight.ao, ALIGN_RIGHT, false );
+    pdfMaker->drawImage( filename, logoHeight.show, ALIGN_RIGHT );
     pdfMaker->moveDown( 30 );
   }
 
