@@ -227,6 +227,8 @@ class PdfMaker
     text = regex_replace( text, regex("</italic>"), " </italic> " );
     text = regex_replace( text, regex("<accent>"), " <accent> " );
     text = regex_replace( text, regex("</accent>"), " </accent> " );
+    text = regex_replace( text, regex("<boldaccent>"), " <boldaccent> " );
+    text = regex_replace( text, regex("</boldaccent>"), " </boldaccent> " );
     text = regex_replace( text, regex("  "), " " );
     // split the text up in words
     istringstream iss(text);
@@ -250,7 +252,11 @@ class PdfMaker
         setFont( FONT_REGULAR, fontSize, accentColor );
         continue;
       }
-      if (words[i] == "</bold>" || words[i] == "</italic>" || words[i] == "</accent>") {
+      if (accentColor > 0 && words[i] == "<boldaccent>" ) {
+        setFont( FONT_BOLD, fontSize, accentColor );
+        continue;
+      }
+      if (words[i] == "</bold>" || words[i] == "</boldaccent>" || words[i] == "</italic>" || words[i] == "</accent>") {
         setFont( FONT_REGULAR, fontSize );
         continue;
       }

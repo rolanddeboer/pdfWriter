@@ -181,7 +181,7 @@ class EntryFormMaker {
 
   void drawLogos(string filename) {
     // pdfMaker->drawImage( aoLogoFilename, logoHeight.ao, ALIGN_RIGHT, false );
-    pdfMaker->drawImage( filename, logoHeight.show, ALIGN_RIGHT );
+    pdfMaker->drawImage( filename, logoHeight.show, ALIGN_LEFT );
     pdfMaker->moveDown( 30 );
   }
 
@@ -275,7 +275,7 @@ class EntryFormMaker {
       pdfMaker->moveDown( 5 );
       pdfMaker->newPageAt( 60, -7 );
       pdfMaker->setFont( FONT_REGULAR, font.size.extras );
-      pdfMaker->writeMultiText( "<accent>—</accent> " + extras.lines[i], font.size.extras, font.lineHeight.extras, font.color.heading );
+      pdfMaker->writeMultiText( "<accent>—</accent> " + extras.lines[i], font.size.extras, font.lineHeight.extras, font.color.headingLight );
     }
   }
 
