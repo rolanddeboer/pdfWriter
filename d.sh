@@ -3,4 +3,4 @@
 git add .
 git commit -m '.'
 git push
-ssh -t dhenuh /var/dev/pdfWriter/update.sh
+ssh -t ibu /var/dev/pdfWriter/update.sh
